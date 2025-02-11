@@ -854,6 +854,15 @@ impl Default for VirtualKeyboard {
         )
         .unwrap();
 
+        let layout_numeric_keypad  = Layout::from_str(
+            "Numeric_Keypad
+[{1}{2}{3}]
+[{4}{5}{6}]
+[{7}{8}{9}]
+[{0}]"
+        )
+        .unwrap();
+
         let layout_symbols = Layout::from_str(
             "Symbols_Mobile
 [{~}{`}{|}{\\}{=}{^}{<}{>}{[}{]}]
@@ -867,6 +876,7 @@ impl Default for VirtualKeyboard {
             .extend(layout_qwerty_shift_once)
             .extend(layout_qwerty_shift_hold)
             .extend(layout_numbers)
+            .extend(layout_numeric_keypad)
             .extend(layout_symbols)
     }
 }
